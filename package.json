@@ -31,8 +31,10 @@
     "lint-fix": "eslint tests/**/*.js tests/*.js src/**/*.js src/*.js --color --global requirejs --global require --fix",
     "test": "karma start --single-run --browsers ChromeHeadless",
     "test-drone": "karma start --single-run --browsers ChromeHeadlessNoSandbox",
+    "prepare": "npm run build:dev",
     "build:docs": "jsdoc -c jsdoc.conf.json",
-    "build:system": "webpack"
+    "build:system": "webpack",
+    "build:dev": "webpack --config webpack.dev.js"
   },
   "homepage": "https://owncloud.github.io/owncloud-sdk/",
   "devDependencies": {
