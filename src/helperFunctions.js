@@ -623,7 +623,8 @@ class helpers {
       service: this.OCS_SERVICE_CLOUD,
       action: 'user',
       data: null,
-      headers: {}
+      headers: {},
+      signal: null
     }
     options = Object.assign({}, defaults, options)
     const action = options.action.includes('?') ? options.action + '&format=json' : options.action + '?format=json'
@@ -634,7 +635,8 @@ class helpers {
     const init = {
       method: options.method,
       mode: 'cors',
-      headers: headers
+      headers: headers,
+      signal: options.signal
     }
     if (options.data !== null) {
       init.body = JSON.stringify(options.data)
